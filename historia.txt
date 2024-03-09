@@ -1,0 +1,76 @@
+1. Crear un repositorio local:
+	1.1. mkdir Trabajo_Individual_Repositorio (crear el directorio raíz)
+	1.2. cd Trabajo_Individual_Repositorio/ (entrar en el directorio)
+	1.3. git init (arrancar el repositorio)
+	1.4. mkdir -p Proyectos/Prj1 (crear la carpeta y subcarpeta de la parte izquierda de la estructura)
+	1.5. mkdir -p Procesos/ControlDeCambios (lo mismo pero con la parte derecha)
+
+
+2. Inluir el archivo historia.txt y la versión 1 del documento de proceso de control con sus plantillas en blanco:
+	2.1. touch historia.txt (archivo con los comandos usados)
+	2.2. cp ../DP_ControldeCambios_Grupo5.docx Procesos/ControlDeCambios (añadir la versión 1 del documento a ControldeCambios)
+	2.3. cp -r ../Plantillas Procesos/ControlDeCambios (añadir las plantillas vacías a ControldeCambios; con -r se mantiene la estructura)
+
+
+3. Actualizar el repositorio local:
+	3.1. git add . (añadir los elementos anteriores a la staging area)
+	3.2. git commit -m "Punto 3. Actualizar el repositorio local con lo hecho en los puntos 1 y 2" (confirmar los cambios con un mensaje asociado)
+
+
+4. Utilizar una etiqueta y marcar como versión "R1":
+	4.1. git tag -a R1 -m "Version R1" (crear la etiqueta anotada y un mensaje asociado)
+
+
+5. Crear una rama "Mejoras" e incluir pdf propuestas:
+	5.1. git branch Mejoras (crear la rama nueva)
+	5.2. git switch Mejoras (cambiarse de la rama master/main a la Mejoras)
+	5.3. cp ../DP_ControldeCambios_Grupo5-v1_2.pdf Procesos/ControlDeCambios (añadir el pdf de propuestas de cambio)
+
+
+6. Modificar el documento word, conseguir la versión 2:
+	6.1. cp ../DP_ControldeCambios_Grupo5.docx Procesos/ControlDeCambios (añadimos la versión 2 del documento a la rama Mejoras)
+	6.2. git add . (añadir los elementos anteriores a la staging area)
+	6.3. git commit -m "Punto 6. Rama Mejoras con documentos añadidos" (confirmar los cambios con un mensaje asociado)
+
+
+------ NOTA: Se guardan los elementos modificados en el 6.2 y 6.3 para asegurar que no hay problemas al fundir las ramas en el 7 ------
+
+
+7. Fundir la rama con la master/main y borrar la rama "Mejoras"
+	7.1. git switch master (cambiarse de la rama Mejoras a la master/main)
+	7.2. git merge Mejoras (fundir la rama con la de master/main)
+	7.3. git branch -d Mejoras (eliminar la rama Mejoras)
+
+
+8. Borra el pdf de las propuestas:
+	8.1. git rm Procesos/ControlDeCambios/DP_ControldeCambios_Grupo5-v1_2.pdf (eliminar el pdf de la carpeta correspondiente)
+
+
+9. Actualizar repositorio y etiquetar la versión con R2:
+	9.1. git add . (añadir los elementos anteriores a la staging area)
+	9.2. git commit -m "Punto 9. Actualizar el repositorio local tras fundir las ramas y borrar las propuestas" (confirmar los cambios con un mensaje asociado)
+	9.3. git tag -a R2 -m "Version R2" (crear la etiqueta anotada y un mensaje asociado)
+
+
+10. Sustituir la version 2 del proceso con la version 3 y actualizar:
+	10.1. cp ../DP_ControldeCambios_Grupo5.docx Procesos/ControlDeCambios (modificamos y cambiamos la version 2 del documento por la 3)
+	10.2. git add . (añadir los elementos anteriores a la staging area)
+	10.3. git commit -m "Punto 10. Actualizar el repositorio local tras cambiar version 2 por la 3" (confirmar los cambios con un mensaje asociado)
+
+
+11. Devolver la rama master/main al estado anterior, actualizar la version 3 y marcar con etiqueta R3:
+	11.1. git reset --hard HEAD~1 (devolver la rama master al commit anterior, el del 9.2)
+	11.2. cp ../DP_ControldeCambios_Grupo5.docx Procesos/ControlDeCambios (modificamos el documento y la añadimos)
+	11.3. cp -r ../Plantillas Procesos/ControlDeCambios (modificamos las plantillas y las añadimos)
+	11.4. git add . (añadir los elementos anteriores a la staging area)
+	11.5. git commit -m "Punto 11. Actualizar el repositorio local tras revertir un commit y modificar docx y Plantillas" (confirmar los cambios con un mensaje asociado)
+	11.6. git tag -a R3 -m "Version R3" (crear la etiqueta anotada y un mensaje asociado)
+
+
+12. Push la rama master/main y los tags a un repositorio en GitHub:
+	12.1. git remote add origin git@github.com:nereanieto/Trabajo_Individual_Repositorio.git (establecer conexión con el repositorio remoto)
+	12.2. git push origin master (subir del repositorio local al remoto)
+	12.3. git push origin --tags (subir las etiquetas generadas)
+	
+
+13. 
