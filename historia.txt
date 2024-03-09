@@ -68,9 +68,14 @@
 
 
 12. Push la rama master/main y los tags a un repositorio en GitHub:
-	12.1. git remote add origin git@github.com:nereanieto/Trabajo_Individual_Repositorio.git (establecer conexión con el repositorio remoto)
+	12.1. git remote add origin https://github.com/nereanieto/Trabajo_Individual_Repositorio.git (establecer conexión con el repositorio remoto)
 	12.2. git push origin master (subir del repositorio local al remoto)
 	12.3. git push origin --tags (subir las etiquetas generadas)
 	
 
-13. 
+13. Actualizar rama master/main:
+	13.1. git pull origin master (actualizar el repositorio local con posibles cambios del remoto)
+
+
+14. Comprobar la diferencia de este fichero con el de la version anterior:
+	14.1. git diff HEAD~1 historia.txt (comprobar cambios entre la version actual y la anterior)
